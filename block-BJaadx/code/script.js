@@ -70,6 +70,7 @@ pas.type = Text
 
 // 25. Select the last element child of the element stored in `topics` variable (#5) and log the `typeof` the element.
 
+
 // 26. Select the element with type `fieldset` and store in a variable named `fieldsetElm`.
 
 // 27. Select the parent element of the element stored in `fieldsetElm` variable (#5) and log the `typeof` the element.
