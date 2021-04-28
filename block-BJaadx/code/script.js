@@ -1,23 +1,40 @@
 // 1. Change the title of the page to `Hello AltCampus!`
+document.title = "Hello AltCampus"
 
 // 2. Select the element using the children property:
 
 //    - Select the `h1` element and change the value to `Learning DOM`
+let heading = document.querySelector("h1")
+heading.innerHTML = "Learning Dom"
 
 //    - Select the first `li` element inside the `ul` with class `topics` and change the innerText to `all about document`
+// let topic = document.querySelectorAll(".topics")
+// ul.firstElementChild()
+// topic.innerHtml = "all about document"
 //    - Select the input element with name `email`
 
 // 3. Log the number (using console.log) of children of all the `li` element inside the ul with class `topics`
+let topic = document.querySelectorAll(".topics")
+console.log(topic)
 
 // 4. Select the first input using the `type` selector and store them in variable named `emailInput`
+let emailinput =  document.querySelector("input")
 
 // 5. Select the ul element using class selector and store in `topics`
+let to = document.querySelectorAll("topics");
+console.log(to)
 
 // 6. Select the first label element and store in `label`
 
+let labe =  document.querySelector("label")
 // 7. Select the input of type `checkbox` with the `id` selector and store in `inputCheckbox`
 
+let inpuCheckbox = document.getElementById("remember")
+
 // 8. Select the input of type password using Attribute selectors. (eg: input[type="text"]) and store in `password`
+
+var pas = document.getElementById("password");
+pas.type = Text
 
 // 9. Select the input using the placeholder attribute selector with value `password` and store in `attrPassword`
 
