@@ -9,6 +9,7 @@ heading.style.color = "black"
 
 // Select all the hr elements and store it in a variable named allHrs using querySelectorAll
 let allHrs = document.querySelectorAll('hr')
+console.log(allHrs)
 
 /* 
 Convert the NodeList returned by querySelectorAll to Array using Array.from() or spread operator and store it in allHrsArray
@@ -16,21 +17,22 @@ Convert the NodeList returned by querySelectorAll to Array using Array.from() or
 Array.from converts an array kind of data into array so we can use methods like map, reduce
 
 HINT:
-let allHrsArray = Array.from(allHrs)
+
 */
+let allHrsArray = Array.from(allHrs)
+console.log(allHrsArray)
 
 // Set the border of the all the hr elements to "1px solid tomato"
 
-allHrs.style.border = "1px solid tomato"
+allHrsArray.forEach((element) => element.style.border = "1px solid tomato")
 
 // Change the background of all the hr to "antiquewhite" using for of loop.
-for(let hrs of allHrs){
-  hrs.style.color = "antiquewhite"
-}
+allHrsArray.forEach((element) => element.backgroundColor = "antiquewhite")
+
 
 // Change the 'border-radius' of all the hr to "5px" using array.
 
-allHrs.style.borderRadius = "5px"
+allHrsArray.forEach((element => element.style.borderRadius = "5px"))
 
 
 // Change the alignment of the heading(h1) to center.
@@ -40,15 +42,17 @@ heading.style.textAlign = "center";
 heading.style.fontSize = "3rem";
 
 // Change the border of hr with class 'image' to `2px solid purple`.
-let image = document.querySelectorAll('.image')
-image.style.border = "2px solid purple"
+let image = document.querySelectorAll('hr.image').forEach((element) => element.style.border = "2px solid purple")
+// image.forEach((element) => element.style.border = "2px solid purple")
 
 // Hide the box number 17 (last box).
-// let seventeenHide = document.querySelector("seventeen");
-// seventeenHide.style.display = "none"
+let seventeenHide = document.querySelector(".seventeen");
+seventeenHide.style.display = "none"
 
 // Change the border of all the hr element from solid to dashed type
-allHrs.style.border = "dashed"
+allHrsArray.forEach((element) => {
+  element.style.border = "dashed"
+})
 
 // Create a pragraph element and store it in variable named 'para' using `createElement`
 let para = document.createElement('p')
@@ -59,11 +63,12 @@ let archiev = document.querySelector(".archive")
 archiev.append(para)
 // Remove all the elements from box 1
 
-let boxOne = document.querySelector('.one').style.borderRadius = "25px"
+let boxOne = document.querySelector('.one')
+boxOne.innerHTML = "";
 
 
 // Replace all the elements inside box 1 with the para (you created above)
-
+boxOne.innerHTML = para
 
 /* Walking the DOM
 Do the following after selecting box 16 and storing in variable named box16
@@ -82,15 +87,38 @@ Do the following after selecting box 16 and storing in variable named box16
 
   - Focus on the difference between element and node
 */
+let box16 = document.querySelector('.sixteen');
+console.log(box16.parentElement)
+console.log(box16.childNodes)
+console.log(box16.previousSibling)
+console.log(box16.nextSibling)
+console.log(box16.firstChild)
+console.log(box16.lastChild)
+
+
+
+console.log(box16.parentElement)
+console.log(box16.previousElementSibling)
+console.log(box16.nextElementSibling)
+console.log(box16.firstElementChild)
+console.log(box16.lastElementChild)
 
 // Select box 2 and append a new paragraph element with content "Append inserts as last child" just after hr element.
-
+let box2 = document.querySelector('.two')
+let p = document.createElement('p')
+p.innerText = "Append inserts as last child"
 // Select box 3 and prepend a new paragraph element with content "Prepend inserts as first child" just before hr element.
-
+let para2 = document.createElement('p')
+para2.innerText = "prepend inserts as first child"
+let boxThree = document.querySelector(".three")
+boxThree.prepend(para2);
 // Change the border of box 4 to '1px solid black'
+let boxFour = document.querySelector('.four')
+
+  boxFour.style.border = "1px solid black"
 
 // Change the border radius of box 5 to 10px.
-document.querySelector(".five").style.borderRadius = "7px"
+document.querySelector(".five").style.borderRadius = "10px"
 
 // Change the text color of box 6 to black.
 document.querySelector(".six").style.coldor = "black"
@@ -99,17 +127,28 @@ document.querySelector(".six").style.coldor = "black"
 para.style.fontSize = "0.8rem"
 
 // Change the background of all the alternate boxes (1, 3, 5, ....) to aliceblue
+let allboxs = document.querySelectorAll('.box')
+allboxs.forEach((element,index) => {
+  if((index + 1)  % 2 != 0){
+    element.style.backgroundColor = "aliceblue"
+  }
+})
 
 // add a class named "awesome-box" to the box 6 using classList property of DOM element.
-let already = document.querySelector('.six').className("awesomee")
+let box6 = document.querySelector('.six').classList.add("awesome-box")
 
 // Using the toggle classList property toggle the class `awesome-box` from box 2
+box2.classList.toggle("awesome-box")
 
 // Using the remove classList proeprty remove the class `awesome-box` from box 4
-
+boxFour.classList.remove("awesome-box")
 // Change the background of the body to bisque
   let body = document.querySelector("body")
-  body.style.background = "bisque"
+  body.style.background = "bisque";
+
+  // or //
+
+  document.body.style.background = "bisque"
 
 // Create a button and store it in a variable named 'btn'
 let page = document.querySelector('.page')
@@ -146,10 +185,10 @@ let seven = document.querySelector('.seven')
 
 
 // Remove all the elements form box seven
-seven.remove()
+seven.innerHTML = "";
 // Append the imgElm to the box no 7
 // let seven = document.querySelector('.seven')
-// nine.append(imgvlm);
+seven.append(imgvlm);
 
 
 // Change the width and height of the image to `100%`
@@ -163,10 +202,12 @@ let input = document.createElement('input')
 
 
 // Change the placeholder property of the input element to "Enter you email!"
-input = document.querySelector('input[type = "placeholder"]')
+input.placeholder = "Enter your email"
 
 
 // Append the input element to the box 5 you selected above
+// let box5 = document.querySelector('.five')
+five.append(input)
 
 // Create two anchor (a) element with  the text of `AltCampus` and `Google`
 let anchor2 = document.createElement('a')
