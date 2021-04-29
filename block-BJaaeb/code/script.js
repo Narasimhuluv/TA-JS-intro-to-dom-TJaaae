@@ -4,6 +4,7 @@ Write a function named `createInputElm` that accepts two parameter (label and `t
 default value to be "text" and return the input element inside label. (create it using `createElement`)
 
 */
+let createInputElm = document.createElement('input');
 
 // Your code goes here
 
