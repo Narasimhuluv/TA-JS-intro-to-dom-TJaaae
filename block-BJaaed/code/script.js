@@ -114,6 +114,48 @@ let allbooks = {
             "A JavaScript pattern and antipattern collection that covers function patterns, jQuery patterns, jQuery plugin patterns, design patterns, general patterns, literals and constructor patterns, object creation patterns, code reuse patterns, DOM and browser patterns",
           website: "https://shichuan.github.io/javascript-patterns/",
         },
+        {
+            isbn: "9781449337712",
+            title: "You Can Win",
+            subtitle: "JavaScript Patterns",
+            author: "Shiv kera",
+            published: "2014-04-07",
+            publisher: "Github",
+            pages: 538,
+            image:
+              "https://sparkledbooks.com/wp-content/uploads/2020/11/426540850sst1570524955.jpg",
+            description:
+              "A JavaScript pattern and antipattern collection that covers function patterns, jQuery patterns, jQuery plugin patterns, design patterns, general patterns, literals and constructor patterns, object creation patterns, code reuse patterns, DOM and browser patterns",
+            website: "https://shichuan.github.io/javascript-patterns/",
+          },
+          {
+            isbn: "9781449337712",
+            title: "The Power of your Subconscious Mind",
+            subtitle: "JavaScript Patterns",
+            author: "Joseph Murphy",
+            published: "2014-04-07",
+            publisher: "Github",
+            pages: 538,
+            image:
+              "https://images-na.ssl-images-amazon.com/images/I/51QTTApN-XL._SX324_BO1,204,203,200_.jpg",
+            description:
+              "A JavaScript pattern and antipattern collection that covers function patterns, jQuery patterns, jQuery plugin patterns, design patterns, general patterns, literals and constructor patterns, object creation patterns, code reuse patterns, DOM and browser patterns",
+            website: "https://shichuan.github.io/javascript-patterns/",
+          },
+          {
+            isbn: "9781449337712",
+            title: "Think and Grow Rich ",
+            subtitle: "JavaScript Patterns",
+            author: "Napoleon Hill",
+            published: "2014-04-07",
+            publisher: "Github",
+            pages: 538,
+            image:
+              "https://images-na.ssl-images-amazon.com/images/I/41+eK8zBwQL._SX319_BO1,204,203,200_.jpg",
+            description:
+              "A JavaScript pattern and antipattern collection that covers function patterns, jQuery patterns, jQuery plugin patterns, design patterns, general patterns, literals and constructor patterns, object creation patterns, code reuse patterns, DOM and browser patterns",
+            website: "https://shichuan.github.io/javascript-patterns/",
+          },
       ],
 };
 let header = document.querySelector('.header')
