@@ -4,17 +4,33 @@ Write a function named `createInputElm` that accepts two parameter (label and `t
 default value to be "text" and return the input element inside label. (create it using `createElement`)
 
 */
-let createInputElm = document.createElement('input');
+function createInputElm(lableMessage, type = "text"){
+  let label = document.createElement('label')
+  label.innerText = lableMessage;
+
+
+  let input = document.createElement('input');
+  input.type = type;
+  label.append(input);
+
+  return label
+}
 
 // Your code goes here
 
 // TEST
-createInputElm('Your name'); //<label>Your name: <input type="text"></label>
-createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></label>
+createInputElm('Narasimhul Vasam'); //<label>Your name: <input type="text"></label>
+createInputElm('23', 'Number'); //<label>Your age: <input type="number"></label>
 
 // 2. Do the same thing as above using string literal like `<h1>Hello</h1>`
 
 // Your code goes here
+function string(){
+  let string = document.createElement('h1')
+  string.innerHTML = "Hello"
+  return string
+}
+
 
 // TEST
 createInputElm('Your name'); //<label>Your name: <input type="text"></label>
@@ -23,6 +39,13 @@ createInputElm('Your age', 'number'); //<label>Your age: <input type="number"></
 // 3. Create a function named `createList` that accept and array of data like ['Mango', 'Apple', 'Banana'] and returns
 // the html for the link like <ul> <li>Mango</li>  <li>Apple</li>  <li>Banana</li> </ul>
 // Your code goes here
+
+function createList(data = []){
+  let html =  `<ul>
+  ${data.map((element) => `<li>${element}</li>)`).join("")}
+  </ul>`;
+  return html
+}
 
 // TEST
 createList(['ALABAMA', 'ALASKA', 'HAWAII', 'KENTUCKY']);
@@ -42,6 +65,17 @@ createList(['Afghanistan', 'Antarctica', 'Congo', 'Estonia']);
 
 // Your code goes here
 
+
+function createTodoList(data = []){
+  let html =  `<ul>
+  ${data.map((element) => `<li>
+                          <p>${element.name}</p>
+                          <input type="checkbox" ${element.isDone} ?  checked : ""} name="" id="">
+                          <span>X</span>
+                        </li>`).join("")}
+               </ul>`;
+  return html
+}
 // TEST
 createTodoList([
   { name: 'Learn DOM', isDone: false },
