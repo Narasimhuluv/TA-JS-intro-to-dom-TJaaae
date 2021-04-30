@@ -11,11 +11,186 @@ body {
   grid-gap: 1rem;
 }
 .box {
-  border: 2px solid #d6bcfa;
+  border: 2px solid #D6BCFA;
   height: 500px;
   border-radius: 10px;
 }
 h1,
 h2 {
   text-align: center;
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+  font-family: 'Open Sans', sans-serif;
+  background: #215f00;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #e4e4d9, rgb(2,50,33));  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #e4e4d9, rgb(2,50,33)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* Custom Styles */
+*, *::after, *::before{
+  box-sizing:  border-box;
+}
+
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.clockSection{
+    margin-top: 250px;
+    background: linear-gradient(rgba(0, 0, 0, 0.349),rgba(0, 0, 0, 0.562)),url(../code/Untitled\ design.png) no-repeat;
+    background-size: 100%;
+    height: 450px;
+}
+.clock{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1px solid white;
+  color: white;
+  position: relative;
+  font-weight: lighter;
+  background: rgb(2,50,33);
+  box-shadow:  20px 20px 60px rgba(41, 99, 79, 0.548),
+             -20px -20px 60px rgba(2, 50, 33, 0.336);
+
+}
+.clock .number{
+  /* --rotation :0; */
+  position: absolute;
+  width:  100%;
+  height: 100%;
+  text-align: center;
+  /* transform:rotate(var(--rotation)) ; */
+  font-size: 1.5rem;
+  padding: 0.6rem;  
+}
+
+/* .clock .number1 { --rotation : 30deg} */
+/* .clock .number2 { --rotation : 60deg}
+.clock .number3 { --rotation : 90deg}
+.clock .number4 { --rotation : 120deg}
+.clock .number5 { --rotation : 150deg}
+.clock .number6 { --rotation : 180deg}
+.clock .number7 { --rotation : 210deg}
+.clock .number8 { --rotation : 240deg}
+.clock .number9 { --rotation : 270deg}
+.clock .number10 { --rotation : 300deg}
+.clock .number11 { --rotation : 330deg} */
+
+.clock .number1{ transform: rotate(30deg);}
+.clock .number2{ transform: rotate(60deg);}
+.clock .number3{ transform: rotate(90deg);}
+.clock .number4{ transform: rotate(120deg);}
+.clock .number5{ transform: rotate(150deg);}
+.clock .number6{ transform: rotate(180deg);}
+.clock .number7{ transform: rotate(210deg);}
+.clock .number8{ transform: rotate(240deg);}
+.clock .number9{ transform: rotate(270deg);}
+.clock .number10{ transform: rotate(300deg);}
+.clock .number11{ transform: rotate(330deg);}
+
+.three{
+   transform: rotate(270deg);
+   font-weight: lighter;
+}
+.six{
+   transform: rotate(180deg);
+   font-weight: lighter;
+}
+.nine{
+   transform: rotate(90deg);
+   font-weight: lighter;
+}
+
+.clock::after{
+  content: '';
+  position: absolute;
+  background-color: black;
+  z-index: 11;
+  width: 1rem;
+  height: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+
+.clock .hand{
+  --rotation : 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  background-color: black;
+  border: 0.5px solid #FFFFFF;
+  transform-origin: bottom;
+  z-index: 10;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+.clock .second{
+  width: 5px;
+  height: 40%;
+  background-color: red;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+}
+ .clock .minute{
+  width: 7px;
+  height: 35%;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  /* background-color: red; */
+}
+ .clock .hour{
+  width: 10px;
+  height: 31%;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  /* background-color: red; */
 }
